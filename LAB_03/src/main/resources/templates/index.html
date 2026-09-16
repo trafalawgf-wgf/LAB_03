@@ -11,18 +11,33 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --ink: #172126;
+            --muted: #66747a;
+            --paper: #f5f1e8;
+            --panel: #fffdf8;
+            --line: #d9d2c5;
+            --coral: #e85d4a;
+            --coral-dark: #b83d31;
+            --gold: #f2bd55;
+            --teal: #1d7773;
+        }
+
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #f1f5f9;
-            color: #1e293b;
+            background-color: var(--paper);
+            background-image: linear-gradient(rgba(23, 33, 38, 0.035) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(23, 33, 38, 0.035) 1px, transparent 1px);
+            background-size: 24px 24px;
+            color: var(--ink);
             min-height: 100vh;
             padding-bottom: 3rem;
         }
         .main-card {
-            background: #ffffff;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
-            border: 1px solid #e2e8f0;
+            background: var(--panel);
+            border-radius: 4px;
+            box-shadow: 8px 8px 0 rgba(23, 33, 38, 0.08);
+            border: 1px solid var(--line);
             padding: 2rem;
         }
         .table th {
@@ -30,35 +45,83 @@
             font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            color: #64748b;
-            background-color: #f8fafc;
-            border-bottom: 2px solid #e2e8f0;
+            color: var(--muted);
+            background-color: #f1ece2;
+            border-bottom: 2px solid var(--ink);
         }
         .table td {
             vertical-align: middle;
             font-size: 0.925rem;
+            border-color: #e8e1d5;
         }
         .badge-code {
             font-family: monospace;
-            background-color: #e0f2fe;
-            color: #0369a1;
+            background-color: #d9efeb;
+            color: var(--teal);
             font-weight: 700;
             padding: 0.35rem 0.65rem;
-            border-radius: 6px;
+            border-radius: 3px;
         }
         .badge-class {
-            background-color: #fef3c7;
-            color: #b45309;
+            background-color: #fff0c9;
+            color: #8c5b0b;
             font-weight: 600;
             padding: 0.35rem 0.65rem;
-            border-radius: 6px;
+            border-radius: 3px;
         }
         .nav-hero {
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            background: var(--ink);
+            background-image: radial-gradient(circle at 88% 20%, rgba(242, 189, 85, 0.25) 0 5rem, transparent 5.1rem),
+                              linear-gradient(120deg, transparent 0 65%, rgba(232, 93, 74, 0.9) 65% 100%);
             color: white;
-            padding: 2.5rem 0;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 20px rgba(30, 58, 138, 0.15);
+            padding: 3.25rem 0 2.75rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 6px 0 var(--gold);
+        }
+        .nav-hero h1 {
+            max-width: 680px;
+            letter-spacing: -0.03em;
+        }
+        .nav-hero .badge {
+            border-radius: 3px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        .nav-hero .btn-warning {
+            background: var(--gold);
+            border-color: var(--gold);
+            color: var(--ink);
+        }
+        .btn-primary {
+            background-color: var(--coral);
+            border-color: var(--coral);
+        }
+        .btn-primary:hover,
+        .btn-primary:focus {
+            background-color: var(--coral-dark);
+            border-color: var(--coral-dark);
+        }
+        .table-hover > tbody > tr:hover > * {
+            --bs-table-accent-bg: #fff5df;
+            color: var(--ink);
+        }
+        .form-control,
+        .input-group-text {
+            border-color: var(--line);
+            background-color: #fffdf8;
+        }
+        .form-control:focus {
+            border-color: var(--coral);
+            box-shadow: 0 0 0 0.2rem rgba(232, 93, 74, 0.16);
+        }
+        @media (max-width: 576px) {
+            .main-card {
+                padding: 1rem;
+                box-shadow: 4px 4px 0 rgba(23, 33, 38, 0.08);
+            }
+            .nav-hero {
+                padding: 2.25rem 0 2rem;
+            }
         }
     </style>
 </head>
